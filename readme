@@ -1,1 +1,7 @@
+Build and Deploy a Machine Learning Model using Docker. 
 
+1. <code>main.py</code>: Train and save a RandomForestClassifier on the titanic.csv file to predict whether a passenger on the Titanic ship would have survived. Features considered for the Binary Classification included: sex, passenger class and fare.
+2. <code>load_model.py</code>: Enter the sex, passenger class and fare of a new passenger and load the saved model to predict whether he/she will survive or not.
+3. <code>Dockerfile</code>: Define the environment variables, specify the working directory, copy the necessary files and write the python command for building an image.
+4. Build the image with <code> docker build -t titanic_model:1.0 .</code> from the titanic_prediction directory
+5. Run the container with <code> docker run -it titanic_model:1.0  </code> from the titanic_prediction directory
