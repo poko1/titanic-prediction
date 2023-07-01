@@ -6,9 +6,8 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 df = pd.read_csv("titanic.csv")
 X = df[['pclass', 'sex', 'fare']]
-X = pd.get_dummies(X)
+X['sex'] = X['sex'].map({'male': 0, 'female': 1})
 y = df['survived']
-
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test =  train_test_split(X,y,test_size=0.2,random_state=1)
 
