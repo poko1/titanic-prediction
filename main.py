@@ -13,9 +13,9 @@ X_train, X_test, y_train, y_test =  train_test_split(X,y,test_size=0.2,random_st
 
 from sklearn.ensemble import RandomForestClassifier
 randf = RandomForestClassifier()
-randf.fit(X_train,y_train)
-pred = randf.predict(X_test)
-print(classification_report(y_test,pred))
+randf.fit(X_train.values,y_train.values)
+pred = randf.predict(X_test.values)
+print(classification_report(y_test.values,pred))
 
 import pickle
 pickle.dump(randf,open('survival_pred.pkl','wb'))
