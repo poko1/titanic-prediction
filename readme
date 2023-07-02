@@ -1,1 +1,6 @@
+Use FastAPI to locally host a website that asks for input parameters and then makes a model prediction. 
+Build the docker image by running docker build -t titanic_model:1.0 . and then run by container by running docker run -d -p 8000:8000 titanic_model:1.0. 
+The website can be accessed from the localhost:8000/docs. 
+Upon entering the inputs (maintain the range for each input parameters), a prediction is returned as an output.
+
 
