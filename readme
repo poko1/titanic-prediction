@@ -5,5 +5,9 @@ Build and Deploy a Machine Learning Model using Docker.
 3. Dockerfile: Define the environment variables, specify the working directory, copy the necessary files and write the python command for building an image that runs the load_model.py file.
 4. Build the image with docker build -t titanic_model:1.0 . from the titanic_prediction directory
 5. Run the container with docker run -it titanic_model:1.0 from the titanic_prediction directory
+6. Push the image to Docker Hub by first reating a repository in Docker Hub. Then give a tag name to the created image using docker tag titanic_model:1.0 user_name/repository_name:latest and push it to the Docker registery using docker push user_name/repository_name:latest. 
+7. Deploy and run the registered model image on AWS ECS by configuring a docker container where the image url should be defined as docker.io/user_name/repository_name:latest. Once created, the container status changes to running and the model can be accessed via the public IP address to get predictions. 
 
-Ideas taken from the article: https://www.analyticsvidhya.com/blog/2022/05/a-complete-guide-for-deploying-ml-models-in-docker/
+
+Ideas taken from the articles: https://www.analyticsvidhya.com/blog/2022/05/a-complete-guide-for-deploying-ml-models-in-docker/
+https://www.analyticsvidhya.com/blog/2022/09/fast-api-docker-and-aws-ecs-to-deploy-machine-learning-model/
