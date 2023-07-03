@@ -1,4 +1,4 @@
-Build and Deploy a Machine Learning Model using Docker. 
+
 
 1. main.py: Train and save a RandomForestClassifier on the titanic.csv file to predict whether a passenger on the Titanic ship would have survived. Features considered for the Binary Classification included: sex, passenger class and fare.
 2. load_model.py: Enter the sex, passenger class and fare of a new passenger and load the saved model to predict whether he/she will survive or not.
@@ -7,7 +7,10 @@ Build and Deploy a Machine Learning Model using Docker.
 5. Run Container: Run the container with docker run -it titanic_model:1.0 from the titanic_prediction directory
 6. Push Image to Docker Hub: Push the image to Docker Hub by first reating a repository in Docker Hub. Then give a tag name to the created image using docker tag titanic_model:1.0 user_name/repository_name:latest and push it to the Docker registery using docker push user_name/repository_name:latest. 
 7. Deploy on AWS ECS: Deploy and run the registered model image on AWS ECS by configuring a docker container where the image url should be defined as docker.io/user_name/repository_name:latest. Once created, the container status changes to running and the model can be accessed via the public IP address to get predictions. 
-
+Use FastAPI to locally host a website that asks for input parameters and then makes a model prediction. 
+Build the docker image by running docker build -t titanic_model:1.0 . and then run by container by running docker run -d -p 8000:8000 titanic_model:1.0. 
+The website can be accessed from the localhost:8000/docs. 
+Upon entering the inputs (maintain the range for each input parameters), a prediction is returned as an output.
 
 Ideas taken from the articles: https://www.analyticsvidhya.com/blog/2022/05/a-complete-guide-for-deploying-ml-models-in-docker/
 https://www.analyticsvidhya.com/blog/2022/09/fast-api-docker-and-aws-ecs-to-deploy-machine-learning-model/

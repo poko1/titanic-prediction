@@ -1,9 +1,16 @@
 FROM python:latest
-WORKDIR /root/Projects/Docker
-COPY . .
+# 
+WORKDIR /code
+# 
+COPY requirements.txt /code/requirements.txt
+# 
 RUN pip install --upgrade pip
-RUN pip install joblib
-
-COPY requirements.txt /tmp/requirements.txt
-RUN pip install -r /tmp/requirements.txt
-CMD ["python", "/root/Projects/Docker/load_model.py"]
+RUN pip install -r /code/requirements.txt 
+# 
+COPY fast_api.py /code/fast_api.py 
+#
+COPY survival_pred.pkl /code/survival_pred.pkl
+#
+COPY load_model.py /code/load_model.py
+#
+CMD ["uvicorn", "fast_api:app", "--host", "0.0.0.0"]
