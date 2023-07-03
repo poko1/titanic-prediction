@@ -9,6 +9,7 @@
 
 Images: 
 S1.PNG and S2.PNG show the FastAPI website UI taking 3 inputs and outputing the model prediction.
+S2.PNG, S3.PNG, and S4.PNG show the creation of container and cluster on AWS and accessing the website UI through public network ip address.
 
 Ideas taken from the following articles: 
 https://www.analyticsvidhya.com/blog/2022/05/a-complete-guide-for-deploying-ml-models-in-docker/
